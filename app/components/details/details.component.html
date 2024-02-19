@@ -1,0 +1,19 @@
+@if (donut$ | async; as DonutInfo) {
+    <h1>Donut!</h1> <button>Add to cart</button>
+    <h2>Name: {{DonutInfo.name}} </h2>
+    <h2>Calories: {{DonutInfo.calories}}</h2>
+    <h2>Extras:</h2>
+  
+    <ul>
+    @for (extra of DonutInfo.extras; track $index) {
+        <li>{{extra}}</li>
+    }
+    </ul>
+  
+  <h2><img src={{DonutInfo.photo}}></h2>
+  
+  <h2>Photo Attribution:</h2>
+  <p>{{DonutInfo.photo_attribution}}</p>
+  
+  
+    } @else {loading ...    }

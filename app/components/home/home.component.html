@@ -1,0 +1,9 @@
+<ul>
+    @if (donuts$ | async; as donuts) {
+      @for (donut of donuts; track $index) {
+        <li><a routerLink="/details/{{ donut.id }}">{{ donut.name }}</a></li>
+      }
+    } @else {
+      <p>Loading ...</p>
+    }
+    </ul>
